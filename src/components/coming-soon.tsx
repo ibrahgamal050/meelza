@@ -1,56 +1,40 @@
-'use client'
-
+"use client"
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
-export function ComingSoon() {
+export default function Component() {
   const [email, setEmail] = useState('')
-  const [subscribed, setSubscribed] = useState(false)
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Here you would typically send the email to your backend
-    console.log('Subscribed:', email)
-    setSubscribed(true)
-    setEmail('')
-  }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-cover bg-center" style={{backgroundImage: "url('/placeholder.svg?height=1080&width=1920')"}}>
-      <div className="max-w-md w-full space-y-8 p-10 bg-white bg-opacity-90 rounded-xl shadow-xl">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">Meelza.com</h1>
-          <h2 className="text-xl font-semibold text-gray-600">Coming Soon</h2>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-purple-50 to-purple-100 p-4">
+      <div className="w-full max-w-md space-y-8 text-center">
+        <div className="mb-8">
+          <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+            Meelza
+          </h1>
+          <p className="mt-2 text-xl font-semibold text-gray-600">Coming Soon</p>
         </div>
-        <div className="mt-8 text-center">
-          <p className="text-gray-600">
-            We're working hard to bring you something amazing. Stay tuned for updates!
-          </p>
-        </div>
-        {!subscribed ? (
-          <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-            <Input
-              type="email"
-              required
-              className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <Button
-              type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
-            >
-              Notify Me
-            </Button>
-          </form>
-        ) : (
-          <div className="mt-8 text-center text-green-600 font-semibold">
-            Thank you for subscribing! We'll keep you updated.
-          </div>
-        )}
+        <p className="text-xl text-gray-600">
+          We&apos;re cooking up something special. Stay tuned for a revolutionary new platform!
+        </p>
+        <form className="mt-8 space-y-4"> 
+          <Input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="w-full"
+          />
+          <Button type="submit" className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white">
+            Notify Me
+          </Button>
+        </form>
       </div>
+      <footer className="mt-16 text-sm text-gray-500">
+        © 2023 Meelza. All rights reserved.
+      </footer>
     </div>
   )
 }
