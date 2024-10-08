@@ -36,7 +36,7 @@ export default function Component() {
         </form>
       </div>
       <footer className="mt-16 text-sm text-gray-500">
-        © 2023 Meelza. All rights reserved.
+        © 2024 Meelza. All rights reserved.
       </footer>
    
     </div>
