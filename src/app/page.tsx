@@ -2,18 +2,24 @@
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { toast } from "@/components/ui/use-toast"  // تأكد من وجود هذا المكون
+import { Toaster } from "@/components/ui/toaster"  // تأكد من وجود هذا المكون
 
 export default function Component() {
   const [email, setEmail] = useState('')
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically send the email to your backend
+
+    // هنا يمكنك إرسال البريد الإلكتروني إلى الخادم الخاص بك
     console.log('Submitted email:', email)
+
     toast({
       title: "Subscribed!",
       description: "We'll keep you updated on our launch.",
     })
+
+    // إعادة تعيين الحقل
     setEmail('')
   }
 
@@ -29,7 +35,7 @@ export default function Component() {
         <p className="text-xl text-gray-600">
           We're cooking up something special. Stay tuned for a revolutionary new platform!
         </p>
-        <form onSubmit={handleSubmit} className="mt-8 space-y-4">
+        <form onSubmit={handleSubmit} className="mt-8 space-y-4"> {/* إضافة onSubmit هنا */}
           <Input
             type="email"
             placeholder="Enter your email"
@@ -46,7 +52,7 @@ export default function Component() {
       <footer className="mt-16 text-sm text-gray-500">
         © 2023 Meelza. All rights reserved.
       </footer>
-    
+      <Toaster /> {/* تأكد من إضافة مكون Toaster هنا */}
     </div>
   )
 }
