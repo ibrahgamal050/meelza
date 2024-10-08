@@ -17,7 +17,7 @@ export default function Component() {
             Meelza
           </h1>
           <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-           Ola 
+           Ola! I love you
           </h1>
           <p className="mt-2 text-xl font-semibold text-gray-600">Coming Soon</p>
         </div>
