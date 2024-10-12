@@ -15,10 +15,10 @@ export default function Component() {
         <div className="mb-8">
           <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
             Meelza
-             Ola "I love you"
+           
           </h1> 
           <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-            Meelza
+          
              Ola 'I love you'
           </h1> 
          
