@@ -19,7 +19,7 @@ export default function Component() {
           </h1> 
           <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
           
-             Ola 'I love you'
+             Ola I love you
           </h1> 
          
          
