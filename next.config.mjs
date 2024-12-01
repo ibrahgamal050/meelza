@@ -3,25 +3,37 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/:path*', // Matches all paths
+        source: '/:path*',
         has: [
           {
             type: 'host',
-            value: 'meelza.com', // Matches the old domain
+            value: 'meelza.com',
           },
         ],
-        destination: 'https://meelza.site/:path*', // Redirects to the new domain
-        permanent: true, // 301 Redirect
+        destination: 'https://meelza.site/:path*',
+        permanent: true,
       },
       {
-        source: '/:path*', // Matches all paths
+        source: '/:path*',
         has: [
           {
             type: 'host',
-            value: '(?<subdomain>.*)\\.meelza\\.com', // Matches subdomains
+            value: '(?<subdomain>.*)\\.meelza\\.com',
           },
         ],
-        destination: 'https://:subdomain.meelza.site/:path*', // Redirects to the new subdomain
+        destination: 'https://:subdomain.meelza.site/:path*',
+        permanent: true,
+      },
+      // Add a specific rule for the homepage
+      {
+        source: '/',
+        has: [
+          {
+            type: 'host',
+            value: 'meelza.com',
+          },
+        ],
+        destination: 'https://meelza.site',
         permanent: true,
       },
     ];
