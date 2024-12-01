@@ -24,7 +24,6 @@ const nextConfig = {
         destination: 'https://:subdomain.meelza.site/:path*',
         permanent: true,
       },
-      // Add a specific rule for the homepage
       {
         source: '/',
         has: [
@@ -36,8 +35,9 @@ const nextConfig = {
         destination: 'https://meelza.site',
         permanent: true,
       },
-    ];
+    ]
   },
-};
+}
 
-export default nextConfig;
+module.exports = nextConfig
+
