@@ -10,7 +10,7 @@ const nextConfig = {
             value: "(?<subdomain>.*)\\.meelza\\.com", // الدومين القديم مع دعم الدومينات الفرعية
           },
         ],
-        destination: "https://:subdomain.meelza.site/:path*", // تحويل إلى الدومين الجديد بنفس الدومين الفرعي
+        destination: "https://:subdomain.meelza.site/:path*", // الدومين الجديد بنفس الدومين الفرعي
         permanent: true, // تحويل دائم 301
       },
       {
