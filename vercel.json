@@ -1,8 +1,25 @@
 {
   "redirects": [
     {
-      "source": "/",
-      "destination": "https://meelza.site/",
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "meelza.com"
+        }
+      ],
+      "destination": "https://meelza.site/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "(?<subdomain>.*)\\.meelza\\.com"
+        }
+      ],
+      "destination": "https://:subdomain.meelza.site/$1",
       "permanent": true
     }
   ]
