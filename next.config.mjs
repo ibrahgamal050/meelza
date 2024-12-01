@@ -3,29 +3,45 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/:path*', // Matches all paths
+        source: '/:path*',
         has: [
           {
             type: 'host',
-            value: 'meelza.com', // Matches the old domain
+            value: 'meelza.com',
           },
         ],
-        destination: 'https://meelza.site/:path*', // Redirects to the new domain
-        permanent: true, // 301 Redirect
+        destination: 'https://meelza.site/:path*',
+        permanent: true,
       },
       {
-        source: '/:path*', // Matches all paths
+        source: '/:path*',
         has: [
           {
             type: 'host',
-            value: '(?<subdomain>.*)\\.meelza\\.com', // Matches subdomains
+            value: '(?<subdomain>.*)\\.meelza\\.com',
           },
         ],
-        destination: 'https://:subdomain.meelza.site/:path*', // Redirects to the new subdomain
+        destination: 'https://:subdomain.meelza.site/:path*',
         permanent: true,
+      },
+    ];
+  },
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-Redirect-Debug',
+            value: 'Redirect rule applied',
+          },
+        ],
       },
     ];
   },
 };
 
-export default nextConfig;
+console.log('Next.js config loaded:', JSON.stringify(nextConfig, null, 2));
+
+module.exports = nextConfig;
+
