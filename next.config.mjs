@@ -3,11 +3,6 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: 'http://meelza.com/:path*',
-        destination: 'https://meelza.site/:path*',
-        permanent: true,
-      },
-      {
         source: '/:path*',
         has: [
           {
