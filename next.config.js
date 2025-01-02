@@ -23,7 +23,7 @@ const nextConfig = {
         ],
         destination: 'https://:subdomain.meelza.site/:path*',
         permanent: true,
-      },
+      }
       
 }
 
