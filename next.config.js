@@ -24,19 +24,7 @@ const nextConfig = {
         destination: 'https://:subdomain.meelza.site/:path*',
         permanent: true,
       },
-      {
-        source: '/',
-        has: [
-          {
-            type: 'host',
-            value: 'meelza.com',
-          },
-        ],
-        destination: 'https://meelza.site',
-        permanent: true,
-      },
-    ]
-  },
+      
 }
 
 module.exports = nextConfig
