@@ -12,8 +12,8 @@ export function middleware(request: NextRequest) {
     
     // Build the destination URL
     const destinationHost = subdomain 
-      ? `${subdomain}.meelza.site`
-      : 'meelza.site'
+      ? `${subdomain}.mmenus.com`
+      : 'mmenus.com'
       
     const destinationUrl = `https://${destinationHost}${path}${request.nextUrl.search}`
     
