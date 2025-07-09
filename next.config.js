@@ -10,7 +10,7 @@ const nextConfig = {
             value: 'meelza.com',
           },
         ],
-        destination: 'https://meelza.site/:path*',
+        destination: 'https://mmenus.com/:path*',
         permanent: true,
       },
       {
@@ -21,11 +21,11 @@ const nextConfig = {
             value: '(?<subdomain>.*)\\.meelza\\.com',
           },
         ],
-        destination: 'https://:subdomain.meelza.site/:path*',
+        destination: 'https://:subdomain.mmenus.com/:path*',
         permanent: true,
-      }
-      
-}
+      },
+    ];
+  },
+};
 
-module.exports = nextConfig
-
+module.exports = nextConfig;
